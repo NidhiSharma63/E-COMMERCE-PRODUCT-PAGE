@@ -10,17 +10,17 @@ const container = document.querySelector(".hero-section");
 const menuIcon = document.querySelector(".menu-icon")
 const menu = document.querySelector(".menu");
 const btnCartIcon = document.getElementById("btn-cart-icon")
-let menuImg = document.querySelector(".menu-img");
+let   menuImg = document.querySelector(".menu-img");
 const logoImg = document.querySelector(".logo-img");
 const profileIcon = document.querySelector(".profile-icon");
 const productImg = document.querySelectorAll(".product");
+const previousIcon = document.querySelector(".previous-icon");
+const nextIcon = document.querySelector(".next-icon")
 
 let cartQuantity  = document.querySelector(".cart-quantity"); 
 let value = document.querySelector(".value");
 let parseValue = parseInt(value.innerHTML);
-
-
-
+let index = 0;
 const setImageUrl = () =>{
     if(window.location.href==="http://localhost:5501/"){
         menuImg.getAttribute("src",'/images/icon-menu.svg');
@@ -48,12 +48,11 @@ thumbnailImg.forEach((thumbnail)=>{
         })
         const clickedThmbnail = e.currentTarget;
         const clickIndex = e.currentTarget.dataset.index;
-        const imageWidth = image.getBoundingClientRect().width
+        let imageWidth = image.getBoundingClientRect().width;
         clickedThmbnail.classList.add("active");
         image.style.left=(-imageWidth *parseInt(clickIndex-1) + 'px');
     }); 
 });
-
 // quantity
 increment.addEventListener("click",()=>{
     parseValue++;
@@ -64,7 +63,6 @@ decremnet.addEventListener("click",()=>{
     if(parseValue < 1) return;
     value.innerHTML=parseValue;
 });
-
 // add to cart
 AddToCartBtn.addEventListener("click",()=>{
     let totalPrice = (parseInt(discountPrice.innerHTML)*parseInt(value.innerHTML));
@@ -103,7 +101,19 @@ container.addEventListener("click",()=>{
 });
 // side menu
 menuIcon.addEventListener("click",()=>{
-    // menuImg.getAttribute('src')
-    // menu.style.display='flex';
     menu.classList.toggle("full-width")
-})
+});
+// slider
+nextIcon.addEventListener('click',()=>{
+    if(index>productImg.length-2) return;
+    index+=1;
+    let imageWidth = image.getBoundingClientRect().width;
+    image.style.left=(-imageWidth *index + 'px');
+});
+previousIcon.addEventListener('click',()=>{
+    if(index<1) return;
+    index-=1;
+    if(index<0) return;
+    let imageWidth = image.getBoundingClientRect().width;
+    image.style.left=(-imageWidth *index + 'px');
+});
