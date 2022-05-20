@@ -1,5 +1,5 @@
 const thumbnailImg = document.querySelectorAll(".thumbnail-img");
-const imges = document.querySelector(".imges");
+const image = document.querySelector(".images");
 const decremnet = document.querySelector(".decremnet");
 const increment = document.querySelector(".increment");
 const AddToCartBtn = document.getElementById("add-to-cart-btn");
@@ -9,13 +9,34 @@ const cartIcon = document.querySelector(".cart-icon");
 const container = document.querySelector(".hero-section");
 const menuIcon = document.querySelector(".menu-icon")
 const menu = document.querySelector(".menu");
+const btnCartIcon = document.getElementById("btn-cart-icon")
+let menuImg = document.querySelector(".menu-img");
+const logoImg = document.querySelector(".logo-img");
+const profileIcon = document.querySelector(".profile-icon");
+const productImg = document.querySelectorAll(".product");
 
-
-
-let menuImg = document.querySelector(".menu-img")
 let cartQuantity  = document.querySelector(".cart-quantity"); 
 let value = document.querySelector(".value");
-let parseValue = parseInt(value.innerHTML)
+let parseValue = parseInt(value.innerHTML);
+
+
+
+const setImageUrl = () =>{
+    if(window.location.href==="http://localhost:5501/"){
+        menuImg.getAttribute("src",'/images/icon-menu.svg');
+        logoImg.getAttribute('src','/images/logo.svg');
+        cartIcon.getAttribute('src','/images/icon-cart.svg');
+        profileIcon.getAttribute('src','/images/image-avatar.png');
+        decremnet.getAttribute('src','/images/icon-minus.svg');
+        increment.getAttribute('src','/images/icon-plus.svg');
+        btnCartIcon.getAttribute('src','/images/icon-cart-white.svg');
+        for (let index = 0; index < thumbnailImg.length; index++) {
+            thumbnailImg[index].getAttribute("src",`/images/image-product-${index+1}-thumbnail.jpg`);
+            productImg[index].getAttribute("src",`/images/image-product-${index+1}.jpg`);
+        }
+    }   
+}
+window.onload=setImageUrl();
 
 thumbnailImg.forEach((thumbnail)=>{
     thumbnail.addEventListener("click",(e)=>{
@@ -27,8 +48,9 @@ thumbnailImg.forEach((thumbnail)=>{
         })
         const clickedThmbnail = e.currentTarget;
         const clickIndex = e.currentTarget.dataset.index;
+        const imageWidth = image.getBoundingClientRect().width
         clickedThmbnail.classList.add("active");
-        imges.style.left=(-400 *parseInt(clickIndex-1) + 'px');
+        image.style.left=(-imageWidth *parseInt(clickIndex-1) + 'px');
     }); 
 });
 
