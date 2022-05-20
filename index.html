@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="menu">
+          <div class="ul-list">
+            <ul>
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>  
+              <li>Contact</li>
+            </ul>
+        </div>
+      </div>
+      <!-- header section -->
+      <div class="header">
+        <div class="col1">
+          <div class="menu-icon">
+            <img class="menu-img" src="/images/icon-menu.svg" alt="menu">
+          </div>
+          <img src="/images/logo.svg" alt="logo">
+            <!-- nav -->
+        <div class="ul-list">
+          <nav>
+            <ul>
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </div>
+        <!-- nav end -->
+        </div>
+      
+        <div class="cart-profile">
+          <span><img class="cart-icon" src="/images/icon-cart.svg" alt="cart"><p class="cart-quantity">0</p></span>
+          <img class="profile-icon" src="/images/image-avatar.png" alt="">
+        </div>
+      </div>
+
+      <!-- cart div -->
+      <div class="cart-wrapper">
+        <p>Cart</p>
+        <p class="empty">Cart is empty</p>
+      </div>
+      <!-- cart div end -->
+      <!-- header section end -->
+
+      <div class="hero-section">
+        <!-- product -section -->
+        <div class="product">
+          <div class="product-img">
+            <div class="product-img-wrapper">
+                <div class="imges">
+                  <img src="/images/image-product-1.jpg" alt="img">
+                  <img src="/images/image-product-2.jpg" alt="img">
+                  <img src="/images/image-product-3.jpg" alt="img">
+                  <img src="/images/image-product-4.jpg" alt="img">
+                </div>
+            </div>
+          </div>
+          <div class="product-state">
+              <img class="thumbnail-img active" data-index="1" src="/images/image-product-1-thumbnail.jpg" alt="image">
+              <img class="thumbnail-img" data-index="2" src="/images/image-product-2-thumbnail.jpg" alt="image">
+              <img class="thumbnail-img" data-index="3" src="/images/image-product-3-thumbnail.jpg" alt="image">
+              <img class="thumbnail-img" data-index="4" src="/images/image-product-4-thumbnail.jpg" alt="image">
+          </div>
+        </div>
+        <!-- product section end -->
+        <!-- product- info  -->
+        <div class="product-info">
+          <p class="product-name">Sneaker Company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="price">
+            <p> $<span class="discount-price">125.00</span> <span class="discount">50%</span></p> 
+            <p class="actual-price">$250.00</p>
+          </div>
+
+          <div class="quantity-price">
+            <div class="quantity">
+              <img class="decremnet" src="/images/icon-minus.svg" alt="-">
+              <p class="value">1</p>
+              <img class="increment" src="/images/icon-plus.svg" alt="+">
+            </div>
+            <div class="cart-btn">
+              <button id="add-to-cart-btn">
+                <img class="cart-icon" src="/images/icon-cart-white.svg" alt="cart">
+                <p>Add to cart</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- product -info end -->
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Nidhi Sharma</a>.
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
