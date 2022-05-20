@@ -21,6 +21,8 @@ let cartQuantity  = document.querySelector(".cart-quantity");
 let value = document.querySelector(".value");
 let parseValue = parseInt(value.innerHTML);
 let index = 0;
+
+
 const setImageUrl = () =>{
     if(window.location.href==="http://localhost:5501/"){
         menuImg.getAttribute("src",'/images/icon-menu.svg');
@@ -37,6 +39,8 @@ const setImageUrl = () =>{
     }   
 }
 window.onload=setImageUrl();
+
+
 
 thumbnailImg.forEach((thumbnail)=>{
     thumbnail.addEventListener("click",(e)=>{
